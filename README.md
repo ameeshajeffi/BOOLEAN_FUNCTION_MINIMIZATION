@@ -33,37 +33,41 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Program:**
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
 
 Developed by: AMEESHA JEFFI J
+
 RegisterNumber:212223220007
-## program
-## module combinationalcircuit(A,B,C,D,F1);
-## input A,B,C,D;
-## output F1;
-## wire x1,x2,x3,x4,x5;
-## assign x1=(~A)&(~B)&(~C)&(~D);
-## assign x2=(A)&(~C)&(~D);
-## assign x3=(~B)&(C)&(~D);
-## assign x4=(~A)&(B)&(C)&(D);
-## assign x5=(B)&(~C)&(D);
-## assign F1=x1|x2|x3|x4|x5;
-## endmodule 
 
-*/
-
-
+```
+module booleanfun(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+and g1(s,ydash,z);
+and g2(t,x,y);
+and g3(u,w,z);
+or g4(f2,s,t,u);
+endmodule
+```
 ## RTL realization
 
-![312535957-dbd64921-6857-40ee-a21b-55fa17e9f89b](https://github.com/ameeshajeffi/BOOLEAN_FUNCTION_MINIMIZATION/assets/150773598/20d23f37-9714-4a82-ad16-4e1b35d1c716)
+![RTL diagram](https://github.com/ameeshajeffi/BOOLEAN_FUNCTION_MINIMIZATION/assets/150773598/9ed08061-a530-4ae4-84be-e9215dafec5b)
 
-## Truth table
-
-![312536822-849f41b1-394f-48f4-b451-88315b927f79](https://github.com/ameeshajeffi/BOOLEAN_FUNCTION_MINIMIZATION/assets/150773598/3a1a10bc-a760-4f53-8329-cdde4062508b)
 
 ## Timing Diagram
 
-![312537126-533d1307-308c-4a6d-9495-b6f289bf8479](https://github.com/ameeshajeffi/BOOLEAN_FUNCTION_MINIMIZATION/assets/150773598/3b2545ec-36dd-4c89-9688-2153e848edbf)
+![timing diagram](https://github.com/ameeshajeffi/BOOLEAN_FUNCTION_MINIMIZATION/assets/150773598/06e8d2a8-af71-4604-bc6d-7ae2b7d9546c)
+
 
 **Result:**
 
